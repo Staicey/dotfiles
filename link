@@ -16,7 +16,6 @@ done
 shift $((OPTIND - 1))
 
 MODULES="$(grep -v '#' "enabled")"
-RC_FILE=".zshrc"
 COMBINED_RC=""
 
 for module in $MODULES; do
@@ -42,7 +41,10 @@ for module in $MODULES; do
     fi
 
     case "$module" in
-        "zsh") cp "${module}/${RC_FILE}" "${HOME}/${RC_FILE}" ;;
+        "zsh")
+            RC_NAME=".zshrc"
+            cp "${module}/.zshrc" "${HOME}/.zshrc"
+            ;;
         *)
             [ ! -d "${module}" ] && {
                 echo "Warning: ${module} is enabled but not found"
@@ -61,9 +63,11 @@ for module in $MODULES; do
     esac
 done
 
-COMBINED_RC="$(echo -e "$COMBINED_RC")"
-grep "alias=" <<<"$COMBINED_RC" >>"${HOME}/${RC_FILE}"
-grep -v "alias=" <<<"$COMBINED_RC" >>"${HOME}/${RC_FILE}"
+RC_FILE="${HOME}/${RC_NAME}"
+[ -f "$RC_FILE" ] && rm "$RC_FILE"
 
-# shellcheck source=../.zshrc
-source "${HOME}/${RC_FILE}" 2>/dev/null
+# Ensure all new lines are rendered
+COMBINED_RC="$(echo -e "$COMBINED_RC")"
+
+grep "^alias " <<<"$COMBINED_RC" >>"${RC_FILE}"
+grep -v "^alias " <<<"$COMBINED_RC" >>"${RC_FILE}"
