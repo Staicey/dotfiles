@@ -55,7 +55,7 @@ for module in $MODULES; do
                 CONFIG_LOC="${HOME}/${config//_//}"
                 TARGET="${PWD}/${module}/${config}"
 
-                [ -e "${CONFIG_LOC}" ] && rm "${CONFIG_LOC}"
+                [ -e "${CONFIG_LOC}" ] && rm -rd "${CONFIG_LOC}"
                 ln -s "${TARGET}" "${CONFIG_LOC}"
             done <<<"$MOD_CONFIG"
             ;;
