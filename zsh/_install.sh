@@ -1,6 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-case "$(uname -a)" in
-    *Darwin*) brew install zsh ;;
-    *Debian*) apt install zsh ;;
-esac
+source _helpers.sh
+installPackage zsh

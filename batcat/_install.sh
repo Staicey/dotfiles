@@ -1,9 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+source _helpers.sh
+installPackage bat
 
-case "$(uname -a)" in
-    *Darwin*)
-        brew install bat
-        ln -s /usr/local/bin/bat /usr/local/bin/batcat
-        ;;
-    *Debian*) apt install bat ;;
-esac
+which -s batcat || ln -s /usr/local/bin/bat /usr/local/bin/batcat

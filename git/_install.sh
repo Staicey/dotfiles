@@ -1,6 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-case "$(uname -a)" in
-    *Darwin*) brew install git ;;
-    *Debian*) apt install git ;;
-esac
+source _helpers.sh
+installPackage git

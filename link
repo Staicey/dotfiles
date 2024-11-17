@@ -36,7 +36,7 @@ for module in $MODULES; do
     if [ -f "$INSTALL" ]; then
         if ! which -s "$module" || [ -n "$FORCE_REINSTALL" ]; then
             echo "Installing: ${module}"
-            eval "$INSTALL" 1>/dev/null 2>/dev/null
+            eval "$INSTALL"
         fi
     fi
 
