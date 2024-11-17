@@ -25,6 +25,10 @@ return {
 
         hybrid_custom.normal.b.fg = "#c5c8c6"
 
+        hybrid_custom.normal.b.bg = "#1c1f26"
+        hybrid_custom.insert.b.bg = "#1c1f26"
+        hybrid_custom.visual.b.bg = "#1c1f26"
+
         hybrid_custom.normal.c.fg = "#c5c8c6"
 
         local opts = {
