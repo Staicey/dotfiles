@@ -43,6 +43,8 @@ for module in $MODULES; do
         "zsh")
             RC_NAME=".zshrc"
             cp "${module}/.zshrc" "${HOME}/.zshrc"
+
+            grep "$USER" /etc/passwd | grep -q "/bin/zsh" || sudo chsh -s /bin/zsh "$USER"
             ;;
         *)
             [ ! -d "${module}" ] && {
