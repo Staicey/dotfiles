@@ -34,14 +34,14 @@ Unknown = '󰠥'
 [username]
 style_user = '#f0c674 bold'
 style_root = 'black bold'
-format = '\[(black bold)[$user](#81a2be)' # 2883ff
+format = '\[(black bold)[$user](#b6bd68)' # 2883ff
 disabled = false
 show_always = false
 
 # Shows the hostname
 [hostname]
 ssh_only = true
-format = '@(black bold)[$hostname](bold #81a2be)\]'
+format = '@(black bold)[$hostname](bold #85678f)\]'
 disabled = false
 
 # Shows current directory
