@@ -3,4 +3,5 @@ nvim
 bun
 batcat
 git
+tmux
 starship

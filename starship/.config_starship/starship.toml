@@ -9,12 +9,12 @@ $character
 """
 
 [character]
-success_symbol = "╰⎯"
-error_symbol = "╰⎯"
-# ╭╴ ╰─
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 [env_var]
-symbol = "╭╴"
+symbol = ""
 variable = 'SHELL'
 format = "$symbol"
 disabled = false
@@ -36,8 +36,6 @@ Arch = '󰣇'
 Ubuntu = ''
 Macos = '󰀵'
 Unknown = '󰠥'
-
-# ---y
 
 # Shows the username
 [username]
@@ -74,7 +72,7 @@ style = 'bold green'
 
 # Shows current git status
 [git_status]
-disabled = true
+disabled = false
 format = '[ $all_status $ahead_behind]($style) '
 style = 'bold green'
 conflicted = '🏳'
