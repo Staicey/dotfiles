@@ -1,1 +1,1 @@
-alias cat="batcat -Pp"
+alias cat="batcat -Pp --theme base16-256 "
