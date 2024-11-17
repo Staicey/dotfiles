@@ -1,10 +1,5 @@
 #!/bin/bash
 
-function fail() {
-    echo "Error: ${*}"
-    exit 1
-}
-
 cd "$(dirname "$0")" || exit 1
 
 while getopts "f" o; do
@@ -15,12 +10,13 @@ while getopts "f" o; do
 done
 shift $((OPTIND - 1))
 
+source scripts/helpers.sh
+
 MODULES="$(grep -v '#' "enabled")"
 COMBINED_RC=""
 
 for module in $MODULES; do
     DEPS="${module}/_dependencies"
-    INSTALL="${module}/_install.sh"
     RC="${module}/_rc"
 
     if [ -f "$DEPS" ]; then
@@ -33,10 +29,13 @@ for module in $MODULES; do
         COMBINED_RC="${COMBINED_RC}\n\n$(cat "$RC")"
     fi
 
-    if [ -f "$INSTALL" ]; then
-        if ! which -s "$module" || [ -n "$FORCE_REINSTALL" ]; then
-            echo "Installing: ${module}"
-            eval "$INSTALL"
+    if ! which -s "$module" || [ -n "$FORCE_REINSTALL" ]; then
+        echo "Installing: ${module}"
+
+        if [ ! -f "${module}/_install.sh" ]; then
+            eval "${module}/_install.sh"
+        else
+            installPackage "${module}"
         fi
     fi
 

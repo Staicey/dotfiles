@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source _helpers.sh
+source scripts/helpers.sh
 installPackage gcc make neovim

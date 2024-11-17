@@ -19,6 +19,14 @@ return {
         local hybrid_custom = require("lualine.themes.base16")
         hybrid_custom.normal.c.bg = nil
 
+        hybrid_custom.normal.a.bg = "#8abeb7"
+        hybrid_custom.insert.a.bg = "#b5bd68"
+        hybrid_custom.visual.a.bg = "#b294bb"
+
+        hybrid_custom.normal.b.fg = "#c5c8c6"
+
+        hybrid_custom.normal.c.fg = "#c5c8c6"
+
         local opts = {
             options = {
                 theme = hybrid_custom,

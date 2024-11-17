@@ -16,6 +16,11 @@ return {
                     n = { ["<c-t>"] = require("trouble.sources.telescope").open },
                 },
             },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                },
+            },
         })
         telescope.load_extension("fzf")
     end,

@@ -9,9 +9,9 @@ $character
 """
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[❯](#c397d8)"
+error_symbol = "[❯](#cc6666)"
+vimcmd_symbol = "[❮](#b5bd68)"
 
 [env_var]
 symbol = ""
@@ -19,15 +19,8 @@ variable = 'SHELL'
 format = "$symbol"
 disabled = false
 
-
-#warp-Drop ugly default prompt characters
-#success_symbol = ""
-#error_symbol = ""
-
-# ---
-
 [os]
-format = '[$symbol](bold white) '   
+format = '[$symbol](bold #c5c8c6) '   
 disabled = false
 
 [os.symbols]
@@ -39,16 +32,16 @@ Unknown = '󰠥'
 
 # Shows the username
 [username]
-style_user = 'yellow bold'
+style_user = '#f0c674 bold'
 style_root = 'black bold'
-format = '\[(black bold)[$user](#2883ff)' # 2883ff
+format = '\[(black bold)[$user](#81a2be)' # 2883ff
 disabled = false
 show_always = false
 
 # Shows the hostname
 [hostname]
 ssh_only = true
-format = '@(black bold)[$hostname](bold blue)\]'
+format = '@(black bold)[$hostname](bold #81a2be)\]'
 disabled = false
 
 # Shows current directory
@@ -58,8 +51,7 @@ home_symbol = '~'
 # read_only_style = '197'
 read_only = '  '
 format = '(black bold) [$path]($style)[$read_only]($read_only_style) '
-style = '#7ed1fb' # yellow bold
-
+style = '#81a2be'
 
 # Shows current git branch
 [git_branch]
@@ -68,13 +60,13 @@ symbol = ' '
 format = '(black bold) [$symbol\[$branch\]]($style) '
 # truncation_length = 0
 # truncation_symbol = '…/'
-style = 'bold green'
+style = 'bold #b5bd68'
 
 # Shows current git status
 [git_status]
 disabled = false
 format = '[ $all_status $ahead_behind]($style) '
-style = 'bold green'
+style = 'bold #b5bd68'
 conflicted = '🏳'
 up_to_date = ''
 untracked = ' '
@@ -89,7 +81,7 @@ deleted = ' '
 
 # Shows kubernetes context and namespace
 [kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold purple) '
+format = 'via [󱃾 $context\($namespace\)](bold #b294bb) '
 disabled = false
 
 # ---
