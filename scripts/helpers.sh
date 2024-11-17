@@ -20,7 +20,7 @@ function installPackage {
         *Debian*)
             if [ -z "$isFunc" ]; then
                 which -s apt || fail "Apt not installed"
-                apt install "${@}"
+                sudo apt install "${@}" -y
             else
                 "$@" || fail "Installation of package failed!"
             fi
