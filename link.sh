@@ -32,7 +32,7 @@ for module in $MODULES; do
     if ! which -s "$module" || [ -n "$FORCE_REINSTALL" ]; then
         echo "Installing: ${module}"
 
-        if [ ! -f "${module}/_install.sh" ]; then
+        if [ -f "${module}/_install.sh" ]; then
             eval "${module}/_install.sh"
         else
             installPackage "${module}"
