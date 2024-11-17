@@ -1,6 +1,7 @@
 git config --global alias.st 'status -sb'
 git config --global alias.ll 'log --oneline'
 git config --global alias.last 'log -1 HEAD --stat'
-git config --global alias.cm 'commit -am'
+git config --global alias.am 'commit -am'
+git config --global alias.c 'commit -m'
 git config --global alias.p 'push'
 git config --global alias.a 'add'
