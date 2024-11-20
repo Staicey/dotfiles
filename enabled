@@ -2,6 +2,7 @@ zsh
 nvim
 bun
 batcat
+eza
 git
 tmux
 starship

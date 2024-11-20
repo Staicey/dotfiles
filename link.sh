@@ -44,7 +44,9 @@ for module in $MODULES; do
             RC_NAME=".zshrc"
             cp "${module}/.zshrc" "${HOME}/.zshrc"
 
-            grep "$USER" /etc/passwd | grep -q "/bin/zsh" || sudo chsh -s /bin/zsh "$USER"
+            if uname -a | grep -qv Darwin; then
+                grep "$USER" /etc/passwd | grep -q "/bin/zsh" || sudo chsh -s /bin/zsh "$USER"
+            fi
             ;;
         *)
             [ ! -d "${module}" ] && {
