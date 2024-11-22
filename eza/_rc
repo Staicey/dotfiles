@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function stripEza {
+    newArgs="$(perl -pe 's/-([a-zA-Z]+?)t(.*)/-t=modified -\1\2/g; s/ - / /g' <<<"$@")"
+
+    #shellcheck disable=all
+    eval eza $newArgs --color=auto --icons=auto
+}
+
+alias ls=stripEza "$@"
