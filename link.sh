@@ -15,6 +15,9 @@ source scripts/helpers.sh
 MODULES="$(grep -v '#' "enabled")"
 COMBINED_RC=""
 
+# New PCs might not have this
+sudo mkdir -p /usr/local/bin
+
 for module in $MODULES; do
     DEPS="${module}/_dependencies"
     RC="${module}/_rc"

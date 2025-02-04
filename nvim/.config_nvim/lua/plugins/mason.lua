@@ -20,7 +20,6 @@ return {
 
                     -- linters --
                     "shellcheck",
-                    "cfn-lint", -- cloudformation aws
 
                     -- lsp --
                     "bash-language-server",
