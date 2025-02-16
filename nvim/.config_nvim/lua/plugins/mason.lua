@@ -39,7 +39,6 @@ return {
         opts = function()
             local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-            ---@type MasonLspconfigSettings
             return {
                 ensure_installed = { "gopls", "bashls", "lua_ls" },
                 automatic_installation = true,
