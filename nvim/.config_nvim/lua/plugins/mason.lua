@@ -1,6 +1,7 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        dependencies = { "saghen/blink.cmp" },
     },
     {
         "williamboman/mason.nvim",
@@ -30,15 +31,19 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("mason-lspconfig").setup({
+        opts = function()
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+            ---@type MasonLspconfigSettings
+            return {
                 ensure_installed = { "gopls", "bashls", "lua_ls" },
-            })
-            require("mason-lspconfig").setup_handlers({
-                function(server)
-                    require("lspconfig")[server].setup({})
-                end,
-            })
+                automatic_installation = true,
+                handlers = {
+                    function(server_name)
+                        require("lspconfig")[server_name].setup({ capabilities = capabilities })
+                    end,
+                },
+            }
         end,
     },
 }
