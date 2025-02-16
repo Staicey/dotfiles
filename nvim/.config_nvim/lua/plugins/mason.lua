@@ -2,6 +2,11 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = { "saghen/blink.cmp" },
+        opts = {
+            diagnostics = {
+                virtual_text = false,
+            },
+        },
     },
     {
         "williamboman/mason.nvim",
