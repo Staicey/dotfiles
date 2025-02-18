@@ -23,6 +23,7 @@ return {
                     -- formatters --
                     "stylua",
                     "shfmt",
+                    "goimports-reviser",
 
                     -- linters --
                     "shellcheck",

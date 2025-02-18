@@ -11,12 +11,16 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 sh = { "shfmt" },
+                go = { "goimports-reviser" },
             },
 
             formatters = {
                 injected = { options = { ignore_errors = true } },
                 shfmt = {
                     prepend_args = { "-ci" },
+                },
+                ["goimports-reviser"] = {
+                    prepend_args = { "-rm-unused" },
                 },
             },
         }
