@@ -1,5 +1,4 @@
-#!/bin/bash
-
+# eza handler
 function stripEza {
     newArgs="$(perl -pe 's/-([a-zA-Z]+?)t(.*)/-t=modified -\1\2/g; s/ - / /g' <<<"$@")"
 
