@@ -30,6 +30,10 @@ return {
             ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
         },
 
+        fuzzy = {
+            implementation = "lua",
+        },
+
         completion = {
             accept = {
                 auto_brackets = { enabled = true },
