@@ -19,9 +19,7 @@ return {
                 shfmt = {
                     prepend_args = { "-ci" },
                 },
-                ["goimports-reviser"] = {
-                    prepend_args = { "-rm-unused" },
-                },
+                ["goimports-reviser"] = {},
             },
         }
         return opts
